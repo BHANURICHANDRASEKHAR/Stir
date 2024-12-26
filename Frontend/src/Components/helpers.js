@@ -4,7 +4,7 @@ import {successfunction,errorfunction} from '../toast'
 export default async function fetchTrends(setLoading,Data,SetData) {
     setLoading(true);
     try {
-      const res=await axios.post("http://localhost:5000/fetch-trends", { withCredentials: true });
+      const res=await axios.post("https://stir-nh6b.onrender.com/fetch-trends", { withCredentials: true });
       console.log(res);
        if(res.data.status=true)
        {
