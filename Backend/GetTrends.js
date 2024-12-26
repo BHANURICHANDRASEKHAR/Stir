@@ -4,7 +4,7 @@ const app= express.Router();
 export default app.get("/", async (req, res) => {
     try {
         const trends = await Trend.find();
-        console.log(trends);
+        
         res.status(200).send({status: true,data:trends})
     } catch (error) {
         console.error("Error fetching trends from database:", error.message);
