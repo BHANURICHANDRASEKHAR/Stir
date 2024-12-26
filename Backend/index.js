@@ -12,7 +12,7 @@ mongoose();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ origin: '*', credentials: true, optionsSuccessStatus: 200 }));
+app.use(cors({ origin: ['http://localhost:5173','https://stirassignement.netlify.app'], credentials: true, optionsSuccessStatus: 200 }));
 
 const port = process.env.PORT || 5000;
 
