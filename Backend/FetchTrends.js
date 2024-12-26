@@ -70,6 +70,7 @@ try {
     res.status(200).json({ message: "Trends fetched successfully", data: trendData });
 } catch (error) {
     console.error("Error fetching trends:", error.message);
+    console.log(error.message)
     res.status(500).json({ error: "Error fetching trends" });
 } finally {
     await driver.quit();
