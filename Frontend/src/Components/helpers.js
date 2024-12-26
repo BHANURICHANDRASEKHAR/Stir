@@ -1,9 +1,10 @@
 import axios from 'axios';
 import {successfunction,errorfunction} from '../toast'
+//https://stir-nh6b.onrender.com,http://localhost:5000
 export default async function fetchTrends(setLoading,Data,SetData) {
     setLoading(true);
     try {
-      const res=await axios.post("http://localhost:5000/fetch-trends");
+      const res=await axios.post("https://stir-nh6b.onrender.com/fetch-trends");
       Data.push(res.data.data);
       SetData(Data);
       successfunction('Successfully fetched')
@@ -18,11 +19,11 @@ export async function GetTrends(setLoading,SetData)
 {
     setLoading(true);
     try {
-      const res=await axios.get("http://localhost:5000/get-trends");
+      const res=await axios.get("https://stir-nh6b.onrender.com/get-trends");
       if(res.data.status)
       {
         SetData(res.data.data);
-        console.log(res.data.status);
+        
         successfunction('Successfully fetched Trends data')
       }
     } catch (error) {

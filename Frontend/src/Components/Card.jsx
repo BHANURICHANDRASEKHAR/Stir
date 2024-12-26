@@ -29,7 +29,7 @@ function Trends({ data, setdata }) {
       {data.length > 0 &&
         data.map((trend, index) => {
           const { trends, timestamp, uniqueId } = trend;
-          console.log(trends);
+         
           return (
             <div key={uniqueId} className="col-md-4 mt-1">
               <div className="card p-2">
