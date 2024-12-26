@@ -3,6 +3,10 @@ import { Builder, By, until } from "selenium-webdriver";
 import { v4 as uuidv4 } from "uuid";
 import Trend from "./Database/Schema.js";
 import { Options } from "selenium-webdriver/chrome.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const router=express.Router();
 export default router.post('/',async(req,res)=>{
     const options = new Options();
@@ -67,11 +71,11 @@ try {
     });
     await trendData.save();
 
-    res.status(200).json({ message: "Trends fetched successfully", data: trendData });
+    res.status(200).json({ message: "Trends fetched successfully", data: trendData,status:true });
 } catch (error) {
     console.error("Error fetching trends:", error.message);
     console.log(error.message)
-    res.status(500).json({ error: "Error fetching trends" });
+    res.status(500).json({ error: "Error fetching trends" ,error:error.message,status:false});
 } finally {
     await driver.quit();
 }
