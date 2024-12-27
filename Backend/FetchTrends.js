@@ -55,7 +55,7 @@ try {
         if (spanText.trim() !== "" && !trendsData.includes(spanText)) {
             trendsData.push(spanText.trim());
         }
-        if (trendsData.length >= 6) break;
+        if (trendsData.length >= 5) break;
     }
 
     if (trendsData.length === 0) {

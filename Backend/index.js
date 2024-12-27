@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import FetchTrends from "./FetchTrends.js";
 import mongoose from "./Database/connection.js";
+import Fetch from "./Fetch.js";
 import GetTrends from "./GetTrends.js";
 dotenv.config();
 
@@ -25,7 +26,7 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
-app.use("/fetch-trends",FetchTrends);
+app.use("/fetch-trends",Fetch);
 app.use("/get-trends",GetTrends);
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

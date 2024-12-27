@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import fetchTrends,{GetTrends} from './helpers.js'
+import Fetch from './help1.js'
 export default function Card() {
     const [loading,setLoading]=useState(false)
     const [data,setdata]=useState([])
