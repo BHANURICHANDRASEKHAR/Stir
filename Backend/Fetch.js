@@ -42,13 +42,13 @@ export default router.post('/', async (req, res) => {
 
 const getTopTrends = async (woeid = '23424848') => {
   const encodedParams = new URLSearchParams();
-  encodedParams.set('woeid', woeid); // Default to India WOEID
+  encodedParams.set('woeid', woeid);
 
   const options = {
     method: 'POST',
     url: 'https://twitter-trends5.p.rapidapi.com/twitter/request.php',
     headers: {
-      'x-rapidapi-key': '0480c11929msh80c307a53902b53p192c60jsn3b1ca5068d75',
+      'x-rapidapi-key': process.env.Rapid_key,
       'x-rapidapi-host': 'twitter-trends5.p.rapidapi.com',
       'Content-Type': 'application/x-www-form-urlencoded',
     },
